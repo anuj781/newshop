@@ -9,22 +9,19 @@ import About from "./pages/About"
 
 
 function App() {
- 
-  let login = true;
+
 
   return (
     <>
     <BrowserRouter>
     <Nav/>
     <Routes>
-    <Route path='/' element={login===true? <Home/> : <Navigate to={'/login'}/>}/>
-
-      
+      <Route path="/" element={<Home/>}/>
       <Route path="/about" element={<About/>}/>
-      <Route path='/cart' element={login===true? <Cart/> : <Navigate to ='/login'/>}/>
-              <Route path='/login' element={login===false? <Login/> : <Navigate to='/'/>}/>
-              <Route path='/signup' element={login===false? <Signup/> : <Navigate to='/'/>}/>
-              <Route path='/view' element={login===true?<View/>:<Navigate to='/login'/>}/>
+      <Route path="/cart" element={<Cart/>}/>
+      <Route path="/login" element={<Login/>}/>
+      <Route path="/signup" element={<Signup/>}/>
+      <Route path="/view" element={<View/>}/>
     </Routes>
     </BrowserRouter>
     </>
