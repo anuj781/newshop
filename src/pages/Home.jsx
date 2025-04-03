@@ -1,11 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react'
 import CartContext from '../context/CartContext';
 import { useNavigate } from 'react-router-dom';
+import UserContext from '../context/UserContext';
 
 const Home = () => {
 
     let ctx = useContext(CartContext);
     console.log(ctx);
+    let userStore = useContext(UserContext);
+    let inputData = userStore.change;
+    console.log(inputData);
     // let navigate = useNavigate();
 
     // let loginUser = localStorage.getItem('loginUser');
@@ -35,7 +39,10 @@ const Home = () => {
     
 
 
-    let slicedArr = Allproducts.slice(firstIndex, lastIndex);
+    
+    let filterArr = Allproducts.filter ((ele) => ele.title.toLowerCase().includes(inputData.toLowerCase()))
+     console.log(filterArr)
+     let slicedArr = filterArr.slice(firstIndex, lastIndex);
     console.log(slicedArr)
 
     // const [currenArr, setcurrenArr] = useState(1);

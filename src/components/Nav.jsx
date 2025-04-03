@@ -25,6 +25,11 @@ const Nav = () => {
   
   }
 
+  const handleChange = (e) => {
+    let value = e.target.value;
+    userStore.setchange(value);
+  }
+
 
  
 
@@ -41,7 +46,7 @@ const Nav = () => {
     <nav className='bg-indigo-900 text-yellow-50 h-[70px] fixed top-0 left-0 right-0 flex items-center '>
    <div className='flex justify-between px-5 w-[100%]'>
    <h1 className='font-extrabold text-2xl text-start '>E-shop.com</h1>
-    <div className='md:flex items-center justify-around w-[60%] text-xl hidden'>
+    <div className='md:flex items-center justify-around w-[80%] text-xl hidden'>
     {login===true && <Link to="/">Home</Link>}
     {login===true && <Link to="/about">About</Link>}
    { login === true &&  <div className='flex'>
@@ -51,7 +56,8 @@ const Nav = () => {
       
       <sup className='text-xl'>{ctx.cartArr.length}</sup>
       </div>}
-       <div className='flex gap-5  ml-70'>
+    {login === true &&   <div><input onChange={handleChange} type="text" placeholder='Search products...' className='border-2 rounded-md px-2 '/></div>}
+       <div className='flex gap-5'>
         { login===false &&
           <button className='bg-blue-700 text-white px-4 py-1 rounded-2xl'><Link to="/login">Login</Link></button> 
         }
@@ -79,6 +85,7 @@ const Nav = () => {
        </div>
 
        }
+       {login === true &&   <div><input onChange={handleChange} type="text" placeholder='Search products...' className='border-2 rounded-md px-2 '/></div>}
        
 <div className='flex flex-col gap-5'>
   {login === false && <button className='bg-blue-700 text-white px-4 py-1 rounded-2xl'><Link to="/login">Login</Link></button> 

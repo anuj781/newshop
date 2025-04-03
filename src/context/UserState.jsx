@@ -7,8 +7,10 @@ const UserState = ({children}) => {
         email:UserData ? UserData.email : '' ,
         login:UserData ? UserData.login : false
     });
+    const [change, setchange] = useState('');
+    console.log(change);
   return (
-    <UserContext.Provider value={{user,setuser}}>
+    <UserContext.Provider value={{user,setuser,change,setchange}}>
         {children}
     </UserContext.Provider>
   )
