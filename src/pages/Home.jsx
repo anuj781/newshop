@@ -6,14 +6,14 @@ const Home = () => {
 
     let ctx = useContext(CartContext);
     console.log(ctx);
-    let navigate = useNavigate();
+    // let navigate = useNavigate();
 
-    let loginUser = localStorage.getItem('loginUser');
-        console.log(loginUser)
+    // let loginUser = localStorage.getItem('loginUser');
+    //     console.log(loginUser)
 
-        if(!loginUser){
-            navigate('/login');
-        }
+    //     if(!loginUser){
+    //         navigate('/login');
+    //     }
 
     const [Allproducts, setAllproducts] = useState([]);
 

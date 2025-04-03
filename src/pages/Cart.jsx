@@ -44,8 +44,8 @@ const Cart = () => {
     <div>
      
 
-<div className="relative  bg-white overflow-x-auto mt-[90px]">
-  <table className="w-full border-4 bg-white text-center border-green-400 text-black text-sm  rtl:text-right">
+<div className="  bg-white overflow-x-auto mt-[90px] ">
+  <table className="w-full border-4 bg-white text-center border-green-400 text-black text-sm  rtl:text-right ">
     <thead className="text-xs">
       <tr>
         <th scope="col" className="px-6 py-3">
@@ -78,9 +78,9 @@ const Cart = () => {
         <td className="px-6 py-4">
           {ele.price.toFixed(2)}
         </td>
-        <td className="px-6 py-4">
+        <td className="px-6 py-4 flex mt-7 ">
           <button onClick={()=> handleIncrease(ele,i)} className='bg-blue-700 rounded-md px-3 py-2 text-white mx-1'>+</button>
-           {ele.quantity} 
+           <div className='mt-2'>{ele.quantity} </div>
           <button onClick={()=> handleDecrease(ele,i)} className='bg-green-700 rounded-md px-3 py-2 text-white mx-1'>-</button> 
         </td>
         <td>

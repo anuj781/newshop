@@ -1,11 +1,13 @@
-import React, { useRef } from 'react'
+import React, { useContext, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Typed from 'typed.js';
+import UserContext from '../context/UserContext';
 
 
 const Login = () => {
 
-
+  let userStore = useContext(UserContext)
+  console.log(userStore)
   
   let emailRef = useRef();
   let passwordRef = useRef();
@@ -26,8 +28,9 @@ const Login = () => {
 
   if (find) {
     if (find.password === obj.password) {
-      localStorage.setItem('loginUser',obj.email)
-      navigate('/')
+      localStorage.setItem('Login',JSON.stringify({email:obj.email, login:true}))
+       userStore.setuser({email:obj.email, login:true})
+      // navigate('/')
     } else {
       alert("wrong password");
     }
@@ -59,7 +62,7 @@ const Login = () => {
      
       
      
-      <form action="" className='bg-indigo-400 flex flex-col w-[350px] h-[300px] px-6 py-6 gap-3 rounded-md text-white text-xl'>
+      <form action="" className='bg-indigo-400 flex flex-col w-[350px] h-[370px] px-6 py-6 gap-3 rounded-md text-white text-xl'>
       <h3 className='mt-300px'>This is  <span ref={el} /></h3>
         <label htmlFor="">Email</label>
         <input ref={emailRef} type="email" className=' border-2 border-white rounded-md' />
