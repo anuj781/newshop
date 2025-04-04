@@ -85,7 +85,7 @@ const Nav = () => {
        </div>
 
        }
-       {login === true &&   <div><input onChange={handleChange} type="text" placeholder='Search products...' className='border-2 rounded-md px-2 '/></div>}
+       {login === true &&   <div><input onChange={handleChange} type="text" placeholder='Search...' className='border-2 rounded-md px-2 w-30 '/></div>}
        
 <div className='flex flex-col gap-5'>
   {login === false && <button className='bg-blue-700 text-white px-4 py-1 rounded-2xl'><Link to="/login">Login</Link></button> 
