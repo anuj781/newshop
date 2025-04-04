@@ -45,8 +45,8 @@ const Cart = () => {
      
 
 <div className="  bg-white overflow-x-auto mt-[90px] ">
-  <table className="w-full border-4 bg-white text-center border-green-400 text-black text-sm  rtl:text-right ">
-    <thead className="text-xs">
+  <table className="w-[90%] m-auto border-4 bg-white text-center border-black text-black text-sm  rtl:text-right ">
+    <thead className="text-xs border-4 border-black">
       <tr>
         <th scope="col" className="px-6 py-3">
           Sno
@@ -68,7 +68,7 @@ const Cart = () => {
     <tbody>
      {
       ctx.cartArr.map((ele,i)=>{
-        return  <tr className="bg-w border-b border-gray-200">
+        return  <tr className="border-b-4 border-black">
         <th scope="row" className="px-6 py-4 font-medium whitespace-nowrap ">
           {i+1}
         </th>
@@ -78,7 +78,7 @@ const Cart = () => {
         <td className="px-6 py-4">
           {ele.price.toFixed(2)}
         </td>
-        <td className="px-6 py-4 flex mt-7 ">
+        <td className="px-6 py-4 flex mt-7 ml-60">
           <button onClick={()=> handleIncrease(ele,i)} className='bg-blue-700 rounded-md px-3 py-2 text-white mx-1'>+</button>
            <div className='mt-2'>{ele.quantity} </div>
           <button onClick={()=> handleDecrease(ele,i)} className='bg-green-700 rounded-md px-3 py-2 text-white mx-1'>-</button> 
